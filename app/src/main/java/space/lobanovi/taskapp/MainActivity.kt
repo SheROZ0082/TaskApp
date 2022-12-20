@@ -29,13 +29,22 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_profile,R.id.newTaskFragment,R.id.navigation_profile)
         )
+
+        navController.navigate(R.id.onBoardFragment)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if(destination.id == R.id.newTaskFragment){
+            if(destination.id == R.id.newTaskFragment||destination.id==R.id.onBoardFragment){
                 navView.visibility = View.GONE
             }else navView.visibility = View.VISIBLE
+
+            if (destination.id == R.id.onBoardFragment){
+                supportActionBar?.hide()
+
+            }
+
         }
+
     }
 }
