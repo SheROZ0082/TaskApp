@@ -41,7 +41,7 @@
       app:layout_constraintTop_toBottomOf="@+id/tv_title_board"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      android:text="@string/here_you_can_write_down_something_important_or_make_a_schedule_for_tomorrow"
+      android:text="here_you_can_write_down_something_important_or_make_a_schedule_for_tomorrow"
       android:textColor="@color/black"
        android:gravity="center"/>
 

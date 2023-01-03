@@ -1,5 +1,6 @@
 package space.lobanovi.taskapp.ui.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,6 +31,29 @@ class HomeFragment : Fragment() {
         initViews()
         initListeners()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        alert()
+    }
+
+    private fun alert() {
+        taskAdapter.onLongClick = {
+
+            val dialog = AlertDialog.Builder(context)
+            dialog.setTitle("Удалить эту новость")
+            dialog.setMessage("Вы точно хотите удалить эту новость?")
+            dialog.setPositiveButton("Да") { _, _ ->
+
+                taskAdapter.deleteItemsAndNotifyAdapter(it)
+                binding.rvHome.adapter = taskAdapter
+                //Delete items in RecyclerView**
+
+            }
+            dialog.setNegativeButton("Назад") { dialog, _ -> dialog.cancel() }
+            dialog.show()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

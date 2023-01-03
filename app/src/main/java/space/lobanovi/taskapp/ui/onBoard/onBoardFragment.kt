@@ -36,12 +36,12 @@ class onBoardFragment : Fragment() {
         binding.vpBoard.currentItem = 2
     }
     private fun onNextClick(){
-        binding.vpBoard.currentItem += 1
+        binding.vpBoard.currentItem += 1    
 
 
     }
 
-
+  
 }
 
 

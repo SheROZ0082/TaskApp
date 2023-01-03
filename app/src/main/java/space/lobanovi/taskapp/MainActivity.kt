@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import space.lobanovi.taskapp.databinding.ActivityMainBinding
+import space.lobanovi.taskapp.utils.Preferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,17 +31,21 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_profile,R.id.newTaskFragment,R.id.navigation_profile)
         )
+        if (Preferences(applicationContext).isBoardingShowed())
+            navController.navigate(R.id.navigation_home)
+        else navController.navigate(R.id.newTaskFragment)
 
-        navController.navigate(R.id.onBoardFragment)
+
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if(destination.id == R.id.newTaskFragment||destination.id==R.id.onBoardFragment){
+            if(destination.id == R.id.newTaskFragment||destination.id==R.id.newTaskFragment){
                 navView.visibility = View.GONE
             }else navView.visibility = View.VISIBLE
 
-            if (destination.id == R.id.onBoardFragment){
+            if (destination.id == R.id.newTaskFragment){
                 supportActionBar?.hide()
 
             }

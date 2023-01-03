@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import space.lobanovi.taskapp.R
 import space.lobanovi.taskapp.databinding.FragmentOnBoardBinding
 import space.lobanovi.taskapp.databinding.FragmentOnBoardPageBinding
+import space.lobanovi.taskapp.utils.Preferences
 
 
 class OnBoardPageFragment(
@@ -60,7 +61,9 @@ class OnBoardPageFragment(
         }
 
         binding.btnStart.setOnClickListener {
-            (findNavController().navigate(R.id.navigation_home))
+            findNavController().navigate(R.id.navigation_home)
+            Preferences(requireContext()).setBoardingSwowed(true)
+
 
         }
     }
