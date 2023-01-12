@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -53,5 +54,15 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
+    //996
+    implementation 'com.hbb20:ccp:2.6.1'
+
+
+    //fb
+    implementation 'com.google.firebase:firebase-auth:21.0.2'
+
+    //LAnimation
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
 }

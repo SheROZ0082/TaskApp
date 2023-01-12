@@ -6,7 +6,7 @@
     android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.new_task.NewTaskFragment"
-    android:background="@drawable/img777">
+    android:background="@drawable/img911">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_title"
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/et_title"
-            android:background="#00D4C2"/>
+            android:background="#D3673AB7"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/et_desc"
-            android:background="#00D4BB"/>
+            android:background="#D0673AB7"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/et_layout_desc"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/main_color"
+        android:backgroundTint="#3F51B5"
         android:text="save"
         android:textColor="@color/black"
         android:textStyle="bold"

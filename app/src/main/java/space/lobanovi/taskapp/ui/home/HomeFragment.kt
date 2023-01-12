@@ -3,9 +3,7 @@ package space.lobanovi.taskapp.ui.home
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
@@ -28,6 +26,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         initViews()
         initListeners()
         return binding.root
@@ -65,6 +64,38 @@ class HomeFragment : Fragment() {
         binding.fabHome.setOnClickListener{
             findNavController().navigate(R.id.newTaskFragment)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.sort){
+            val items = arrayOf("По Дате", "По Алфавиту")
+
+            val builder = AlertDialog.Builder(requireContext())
+            with(builder){
+                setTitle("Сортировать по")
+                setItems(items){ dialog, which ->
+                    when(which){
+
+                        0 ->{
+
+                        }
+                        1 ->{
+
+                        }
+                    }
+
+                }
+
+                show()
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_home, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun initViews() {

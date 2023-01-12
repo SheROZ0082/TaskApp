@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="space.lobanovi.taskapp.ui.dashboard.DashboardFragment"
+        android:name="space.lobanovi.taskapp.ui.home.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
@@ -32,5 +32,10 @@
         android:name="space.lobanovi.taskapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
 
 </navigation>

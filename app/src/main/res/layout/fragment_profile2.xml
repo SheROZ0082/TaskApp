@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.ProfileFragment"
-    android:background="@drawable/img77">
+    android:background="@drawable/img911">
 
     <ImageView
         android:id="@+id/ivProfile"
@@ -15,15 +15,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/img777"/>
+        android:layout_marginBottom="300dp"
+        android:src="@drawable/img112"/>
     
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ivProfile"
         android:hint="@string/тфьу"
-        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="500dp"
+        android:background="#AE673AB7"
+        android:textColorHint="@color/black"
+
 
 
         />
@@ -31,10 +35,11 @@
         android:id="@+id/btn_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="save"
         app:layout_constraintTop_toBottomOf="@id/edit_name"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#90673AB7"
         />
 
 

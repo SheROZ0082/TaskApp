@@ -30,10 +30,14 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_profile,R.id.newTaskFragment,R.id.navigation_profile)
+
         )
-        if (Preferences(applicationContext).isBoardingShowed())
+
+        navController.navigate(R.id.authFragment)
+
+        /*if (Preferences(applicationContext).isBoardingShowed())
             navController.navigate(R.id.navigation_home)
-        else navController.navigate(R.id.newTaskFragment)
+        else navController.navigate(R.id.newTaskFragment)*/
 
 
 
@@ -41,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if(destination.id == R.id.newTaskFragment||destination.id==R.id.newTaskFragment){
+            if(destination.id == R.id.newTaskFragment||destination.id==R.id.newTaskFragment || destination.id == R.id.authFragment){
                 navView.visibility = View.GONE
             }else navView.visibility = View.VISIBLE
 

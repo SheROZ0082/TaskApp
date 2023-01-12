@@ -1,4 +1,4 @@
-package space.lobanovi.taskapp.ui.dashboard
+package space.lobanovi.taskapp.ui.home.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
